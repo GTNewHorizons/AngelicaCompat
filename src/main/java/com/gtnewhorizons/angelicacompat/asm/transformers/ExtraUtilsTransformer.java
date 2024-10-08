@@ -38,8 +38,6 @@ public class ExtraUtilsTransformer implements IClassTransformer {
             return basicClass;
         }
 
-        Common.log.info("Adding ThreadSafeISBRH for Extra Utilities to: {}", transformedName);
-
         final ClassReader cr = new ClassReader(basicClass);
         final ClassNode cn = new ClassNode();
         cr.accept(cn, 0);
