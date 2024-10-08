@@ -3,7 +3,11 @@ package com.gtnewhorizons.angelicacompat.asm;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import java.util.Set;
 import java.util.function.Supplier;
 
 import com.gtnewhorizon.gtnhmixins.core.GTNHMixinsCore;
