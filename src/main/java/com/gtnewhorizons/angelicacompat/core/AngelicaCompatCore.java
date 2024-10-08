@@ -4,11 +4,15 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import org.spongepowered.asm.launch.GlobalProperties;
+import org.spongepowered.asm.service.mojang.MixinServiceLaunchWrapper;
+
 import com.gtnewhorizon.gtnhlib.config.ConfigException;
 import com.gtnewhorizon.gtnhlib.config.ConfigurationManager;
 import com.gtnewhorizon.gtnhmixins.IEarlyMixinLoader;
 import com.gtnewhorizons.angelicacompat.asm.AsmTransformers;
 import com.gtnewhorizons.angelicacompat.config.PatchesConfig;
+import com.gtnewhorizons.angelicacompat.loading.MixinCompatHackTweaker;
 import com.gtnewhorizons.angelicacompat.mixins.Mixins;
 
 import cpw.mods.fml.relauncher.IFMLLoadingPlugin;
@@ -37,6 +41,12 @@ public class AngelicaCompatCore implements IFMLLoadingPlugin, IEarlyMixinLoader 
 
     @Override
     public String[] getASMTransformerClass() {
+        final List<String> mixinTweakClasses = GlobalProperties
+            .get(MixinServiceLaunchWrapper.BLACKBOARD_KEY_TWEAKCLASSES);
+        if (mixinTweakClasses != null) {
+            mixinTweakClasses.add(MixinCompatHackTweaker.class.getName());
+        }
+
         if (transformerClasses == null) {
             transformerClasses = AsmTransformers.getTransformers();
         }

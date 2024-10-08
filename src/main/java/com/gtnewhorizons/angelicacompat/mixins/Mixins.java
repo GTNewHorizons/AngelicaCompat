@@ -8,6 +8,7 @@ import java.util.Set;
 import java.util.function.Supplier;
 import java.util.stream.Collectors;
 
+import com.gtnewhorizons.angelica.config.AngelicaConfig;
 import com.gtnewhorizons.angelicacompat.config.PatchesConfig;
 
 import cpw.mods.fml.relauncher.FMLLaunchHandler;
@@ -31,7 +32,12 @@ public enum Mixins {
         .addTargetedMod(TargetedMod.MINEFACTORY_RELOADED)
         .setSide(Side.CLIENT)
         .setApplyIf(() -> PatchesConfig.patchMFR)
-        .addMixinClasses("client.minefactoryreloaded.MixinRedNetCableRenderer"));
+        .addMixinClasses("client.minefactoryreloaded.MixinRedNetCableRenderer")),
+    XAEROS_MINIMAP_EARLY(new Builder("Enable patches in Xaeros Minimap").setPhase(Phase.EARLY)
+        .addTargetedMod(TargetedMod.XAEROS_MINIMAP)
+        .setSide(Side.CLIENT)
+        .setApplyIf(() -> PatchesConfig.patchXaerosMinimap && AngelicaConfig.enableHudCaching)
+        .addMixinClasses("client.xaeros.MixinEntityRenderer_Xaeros"));
 
     private final List<String> mixinClasses;
     private final Supplier<Boolean> applyIf;

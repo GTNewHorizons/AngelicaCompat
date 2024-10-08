@@ -44,4 +44,5 @@ dependencies {
     compileOnly(rfg.deobf("curse.maven:extrautils-225561:2264383"))
     compileOnly(rfg.deobf("curse.maven:campfirebackport-387444:4611675"))
     compileOnly(rfg.deobf("curse.maven:minefactory-reloaded-66672:2277486"))
+    compileOnly(rfg.deobf("curse.maven:xaeros-minimap-263420:5060684"))
 }

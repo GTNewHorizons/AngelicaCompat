@@ -1,6 +1,5 @@
 package com.gtnewhorizons.angelicacompat.mixins.late.client.campfirebackport;
 
-import com.gtnewhorizons.angelica.api.ThreadSafeISBRH;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.RenderBlocks;
 import net.minecraft.util.IIcon;
@@ -12,6 +11,7 @@ import org.spongepowered.asm.mixin.injection.ModifyArgs;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.invoke.arg.Args;
 
+import com.gtnewhorizons.angelica.api.ThreadSafeISBRH;
 import com.gtnewhorizons.angelica.mixins.interfaces.ITexturesCache;
 import com.gtnewhorizons.angelica.utils.AnimationsRenderUtils;
 

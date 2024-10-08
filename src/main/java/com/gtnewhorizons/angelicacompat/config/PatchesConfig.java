@@ -20,4 +20,9 @@ public class PatchesConfig {
     @Config.RequiresMcRestart
     public static boolean patchMFR;
 
+    @Config.Comment("Xaeros Minimap")
+    @Config.DefaultBoolean(true)
+    @Config.RequiresMcRestart
+    public static boolean patchXaerosMinimap;
+
 }

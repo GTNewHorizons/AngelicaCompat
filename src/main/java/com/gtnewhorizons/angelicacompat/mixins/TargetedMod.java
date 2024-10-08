@@ -7,7 +7,8 @@ public enum TargetedMod {
     VANILLA("Minecraft", null),
     CAMPFIRE_BACKPORT("CampfireBackport", null, "campfirebackport"),
     EXTRA_UTILITIES("ExtraUtilities", null, "ExtraUtilities"),
-    MINEFACTORY_RELOADED("MineFactory Reloaded", null, "MineFactoryReloaded");
+    MINEFACTORY_RELOADED("MineFactory Reloaded", null, "MineFactoryReloaded"),
+    XAEROS_MINIMAP("Xaeros Minimap", null, "XaeroMinimap");
 
     /** The "name" in the {@link Mod @Mod} annotation */
     public final String modName;
