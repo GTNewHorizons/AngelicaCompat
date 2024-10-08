@@ -4,7 +4,6 @@ import java.io.File;
 import java.lang.reflect.Field;
 import java.util.List;
 
-import com.gtnewhorizons.angelicacompat.config.PatchesConfig;
 import net.minecraft.launchwrapper.IClassTransformer;
 import net.minecraft.launchwrapper.ITweaker;
 import net.minecraft.launchwrapper.Launch;
@@ -12,6 +11,7 @@ import net.minecraft.launchwrapper.LaunchClassLoader;
 
 import com.gtnewhorizons.angelica.config.AngelicaConfig;
 import com.gtnewhorizons.angelicacompat.Common;
+import com.gtnewhorizons.angelicacompat.config.PatchesConfig;
 
 public class MixinCompatHackTweaker implements ITweaker {
 
