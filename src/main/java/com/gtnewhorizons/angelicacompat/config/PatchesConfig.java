@@ -10,4 +10,14 @@ public class PatchesConfig {
     @Config.RequiresMcRestart
     public static boolean patchExtraUtils;
 
+    @Config.Comment("Campfire Backport")
+    @Config.DefaultBoolean(true)
+    @Config.RequiresMcRestart
+    public static boolean patchCampfireBackport;
+
+    @Config.Comment("MineFactory Reloaded")
+    @Config.DefaultBoolean(true)
+    @Config.RequiresMcRestart
+    public static boolean patchMFR;
+
 }

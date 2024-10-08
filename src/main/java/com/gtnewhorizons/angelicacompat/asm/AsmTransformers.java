@@ -21,7 +21,9 @@ import cpw.mods.fml.relauncher.FMLLaunchHandler;
 public enum AsmTransformers {
 
     EXTRA_UTILITIES_ISBRH("Extra Utilities ThreadSafeISBRH Transformer", () -> PatchesConfig.patchExtraUtils,
-        Side.CLIENT, "com.gtnewhorizons.angelicacompat.asm.transformers.ExtraUtilsTransformer");
+        Side.CLIENT, "com.gtnewhorizons.angelicacompat.asm.transformers.ExtraUtilsTransformer"),
+    CAMPFIRE_BACKPORT_ISBRH("Campfire Backport ThreadSafeISBRH Transformer", () -> PatchesConfig.patchCampfireBackport,
+        Side.CLIENT, "com.gtnewhorizons.angelicacompat.asm.transformers.CampfireBackportTransformer");
 
     private final Supplier<Boolean> applyIf;
     private final Side side;

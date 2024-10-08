@@ -5,7 +5,9 @@ import cpw.mods.fml.common.Mod;
 public enum TargetedMod {
 
     VANILLA("Minecraft", null),
-    EXTRA_UTILITIES("ExtraUtilities", null, "ExtraUtilities");
+    CAMPFIRE_BACKPORT("CampfireBackport", null, "campfirebackport"),
+    EXTRA_UTILITIES("ExtraUtilities", null, "ExtraUtilities"),
+    MINEFACTORY_RELOADED("MineFactory Reloaded", null, "MineFactoryReloaded");
 
     /** The "name" in the {@link Mod @Mod} annotation */
     public final String modName;

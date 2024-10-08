@@ -14,14 +14,24 @@ import cpw.mods.fml.relauncher.FMLLaunchHandler;
 
 public enum Mixins {
 
-    EXTRA_UTILITIES_THREAD_SAFETY(new Builder("Enable thread safety fixes in Extra Utilities").setPhase(Phase.LATE)
+    EXTRA_UTILITIES(new Builder("Enable patches in Extra Utilities").setPhase(Phase.LATE)
         .addTargetedMod(TargetedMod.EXTRA_UTILITIES)
         .setSide(Side.CLIENT)
         .setApplyIf(() -> PatchesConfig.patchExtraUtils)
         .addMixinClasses(
             "client.extrautils.MixinRenderBlockConnectedTextures",
             "client.extrautils.MixinRenderBlockConnectedTexturesEthereal",
-            "client.extrautils.MixinIconConnectedTexture"));
+            "client.extrautils.MixinIconConnectedTexture")),
+    CAMPFIRE_BACKPORT(new Builder("Enable Patchs in Campfire Backport").setPhase(Phase.LATE)
+        .addTargetedMod(TargetedMod.CAMPFIRE_BACKPORT)
+        .setSide(Side.CLIENT)
+        .setApplyIf(() -> PatchesConfig.patchCampfireBackport)
+        .addMixinClasses("client.campfirebackport.MixinRenderBlockCampfire")),
+    MINEFACTORY_RELOADED(new Builder("Enable patches in MineFactory Reloaded").setPhase(Phase.LATE)
+        .addTargetedMod(TargetedMod.MINEFACTORY_RELOADED)
+        .setSide(Side.CLIENT)
+        .setApplyIf(() -> PatchesConfig.patchMFR)
+        .addMixinClasses("client.minefactoryreloaded.MixinRedNetCableRenderer"));
 
     private final List<String> mixinClasses;
     private final Supplier<Boolean> applyIf;
