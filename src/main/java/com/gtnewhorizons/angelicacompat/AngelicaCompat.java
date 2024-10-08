@@ -7,7 +7,11 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
 
-@Mod(modid = AngelicaCompat.MODID, version = Tags.VERSION, name = "Angelica Compat", acceptedMinecraftVersions = "[1.7.10]")
+@Mod(
+    modid = AngelicaCompat.MODID,
+    version = Tags.VERSION,
+    name = "Angelica Compat",
+    acceptedMinecraftVersions = "[1.7.10]")
 public class AngelicaCompat {
 
     public static final String MODID = "angelicacompat";

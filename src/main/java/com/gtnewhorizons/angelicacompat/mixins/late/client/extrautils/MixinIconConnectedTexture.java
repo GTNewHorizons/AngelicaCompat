@@ -1,14 +1,17 @@
 package com.gtnewhorizons.angelicacompat.mixins.late.client.extrautils;
 
-import com.rwtema.extrautils.block.IconConnectedTexture;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.util.IIcon;
+
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
+
+import com.rwtema.extrautils.block.IconConnectedTexture;
+
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 @Mixin(IconConnectedTexture.class)
 public class MixinIconConnectedTexture {

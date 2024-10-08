@@ -1,14 +1,14 @@
 package com.gtnewhorizons.angelicacompat.asm.transformers;
 
-import com.gtnewhorizons.angelicacompat.Common;
-import com.gtnewhorizons.angelicacompat.asm.AsmUtil;
+import java.util.*;
+
 import net.minecraft.launchwrapper.IClassTransformer;
+
 import org.objectweb.asm.ClassReader;
 import org.objectweb.asm.ClassWriter;
-import org.objectweb.asm.tree.AnnotationNode;
 import org.objectweb.asm.tree.ClassNode;
 
-import java.util.*;
+import com.gtnewhorizons.angelicacompat.asm.AsmUtil;
 
 public class ExtraUtilsTransformer implements IClassTransformer {
 
@@ -18,7 +18,12 @@ public class ExtraUtilsTransformer implements IClassTransformer {
     private static final String RenderBlockFullBright = "com.rwtema.extrautils.block.render.RenderBlockFullBright";
     private static final String RenderBlockSpike = "com.rwtema.extrautils.block.render.RenderBlockSpike";
 
-    private static final List<String> transformedClasses = Arrays.asList(RenderBlockColor, RenderBlockConnectedTextures, RenderBlockConnectedTexturesEthereal, RenderBlockFullBright, RenderBlockSpike);
+    private static final List<String> transformedClasses = Arrays.asList(
+        RenderBlockColor,
+        RenderBlockConnectedTextures,
+        RenderBlockConnectedTexturesEthereal,
+        RenderBlockFullBright,
+        RenderBlockSpike);
 
     private static final Map<String, Boolean> perThreadMap = new HashMap<>();
 
