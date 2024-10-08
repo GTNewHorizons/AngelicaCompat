@@ -1,5 +1,6 @@
 package com.gtnewhorizons.angelicacompat.mixins.late.client.campfirebackport;
 
+import com.gtnewhorizons.angelica.api.ThreadSafeISBRH;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.RenderBlocks;
 import net.minecraft.util.IIcon;
@@ -15,6 +16,7 @@ import com.gtnewhorizons.angelica.mixins.interfaces.ITexturesCache;
 import com.gtnewhorizons.angelica.utils.AnimationsRenderUtils;
 
 @Mixin(value = connor135246.campfirebackport.client.rendering.RenderBlockCampfire.class, remap = false)
+@ThreadSafeISBRH(perThread = false)
 public class MixinRenderBlockCampfire {
 
     @Inject(method = "renderFace", at = @At("HEAD"))

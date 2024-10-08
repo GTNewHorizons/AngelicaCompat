@@ -13,6 +13,13 @@ import org.objectweb.asm.tree.ClassNode;
 
 import com.gtnewhorizons.angelicacompat.asm.AsmUtil;
 
+/**
+ * Leaving this as ASM for now so that it serves as an example for how to do this via ASM in case we need that.
+ * This annotation can be trivially applied via mixin though, see Campfire Backport mixin for an example of that.
+ *
+ * Probably don't use the ASM to do this unless there's a good reason.
+ */
+
 public class ExtraUtilsTransformer implements IClassTransformer {
 
     private static final String RenderBlockColor = "com.rwtema.extrautils.block.render.RenderBlockColor";
