@@ -25,4 +25,19 @@ public class PatchesConfig {
     @Config.RequiresMcRestart
     public static boolean patchXaerosMinimap;
 
+    @Config.Comment("Stacks on Stacks")
+    @Config.DefaultBoolean(true)
+    @Config.RequiresMcRestart
+    public static boolean patchStacksOnStacks;
+
+    @Config.Comment("Thaumcraft")
+    @Config.DefaultBoolean(true)
+    @Config.RequiresMcRestart
+    public static boolean patchThaumcraft;
+
+    @Config.Comment("ThaumicHorizons")
+    @Config.DefaultBoolean(true)
+    @Config.RequiresMcRestart
+    public static boolean patchThaumicHorizons;
+
 }

@@ -34,11 +34,14 @@
  * For more details, see https://docs.gradle.org/8.0.1/userguide/java_library_plugin.html#sec:java_library_configurations_graph
  */
 dependencies {
+    compileOnly("org.projectlombok:lombok:1.18.22") { transitive = false }
+    annotationProcessor("org.projectlombok:lombok:1.18.22")
+
     runtimeOnlyNonPublishable("com.github.GTNewHorizons:NotEnoughItems:2.6.34-GTNH:dev")
 
     // Actual dependencies
-    api("com.github.GTNewHorizons:Angelica:1.0.0-beta7:dev")
-    api("com.github.GTNewHorizons:GTNHLib:0.5.13:dev")
+    api("com.github.GTNewHorizons:Angelica:1.0.0-beta16:dev")
+    api("com.github.GTNewHorizons:GTNHLib:0.5.18:dev")
 
     // Mod compat deps
     compileOnly(rfg.deobf("curse.maven:extrautils-225561:2264383"))

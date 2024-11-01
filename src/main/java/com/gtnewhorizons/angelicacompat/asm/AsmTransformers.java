@@ -11,8 +11,9 @@ import java.util.Set;
 import java.util.function.Supplier;
 
 import com.gtnewhorizon.gtnhmixins.core.GTNHMixinsCore;
+import com.gtnewhorizons.angelica.config.AngelicaConfig;
 import com.gtnewhorizons.angelicacompat.Common;
-import com.gtnewhorizons.angelicacompat.config.PatchesConfig;
+import com.gtnewhorizons.angelicacompat.asm.handlers.CompatHandler;
 import com.gtnewhorizons.angelicacompat.mixins.TargetedMod;
 
 import cpw.mods.fml.relauncher.CoreModManager;
@@ -20,8 +21,14 @@ import cpw.mods.fml.relauncher.FMLLaunchHandler;
 
 public enum AsmTransformers {
 
-    EXTRA_UTILITIES_ISBRH("Extra Utilities ThreadSafeISBRH Transformer", () -> PatchesConfig.patchExtraUtils,
-        Side.CLIENT, "com.gtnewhorizons.angelicacompat.asm.transformers.ExtraUtilsTransformer");
+    FIELD_LEVEL_TESSELLATOR("Field Level Tessellator Transformer", () -> AngelicaConfig.enableSodium, Side.CLIENT,
+        "com.gtnewhorizons.angelicacompat.asm.transformers.generic.FieldLevelTessellatorTransformer"),
+    GET_TILE_ENTITY_NULL_GUARD("getTileEntity Null Guard Transformer", () -> AngelicaConfig.enableSodium, Side.CLIENT,
+        "com.gtnewhorizons.angelicacompat.asm.transformers.generic.GetTileEntityNullGuardTransformer"),
+    THREAD_SAFE_ISBRH_ANNOTATION("ThreadSafeISBRHAnnotation Transformer", () -> AngelicaConfig.enableSodium,
+        Side.CLIENT, "com.gtnewhorizons.angelicacompat.asm.transformers.generic.ThreadSafeISBRHAnnotationTransformer"),
+    HUDCACHING_EARLY_RETURN("HUDCaching Early Return Transformer", () -> AngelicaConfig.enableHudCaching, Side.CLIENT,
+        "com.gtnewhorizons.angelicacompat.asm.transformers.generic.HUDCachingEarlyReturnTransformer");
 
     private final Supplier<Boolean> applyIf;
     private final Side side;
@@ -119,6 +126,13 @@ public enum AsmTransformers {
                 Common.log.info("Not loading transformer {}", (Object[]) transformer.transformerClasses);
             }
         }
+
+        for (CompatHandler compatHandler : CompatRegistry.INSTANCE.getHandlers()) {
+            if (compatHandler.extraTransformers() != null) {
+                transformerList.addAll(compatHandler.extraTransformers());
+            }
+        }
+
         return transformerList.toArray(new String[0]);
     }
 
