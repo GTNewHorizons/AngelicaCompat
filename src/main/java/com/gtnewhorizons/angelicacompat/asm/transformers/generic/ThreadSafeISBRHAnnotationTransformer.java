@@ -8,7 +8,8 @@ import net.minecraft.launchwrapper.IClassTransformer;
 
 import org.spongepowered.asm.lib.ClassReader;
 import org.spongepowered.asm.lib.ClassWriter;
-import org.spongepowered.asm.lib.tree.*;
+import org.spongepowered.asm.lib.tree.AnnotationNode;
+import org.spongepowered.asm.lib.tree.ClassNode;
 
 import com.gtnewhorizons.angelicacompat.asm.CompatRegistry;
 import com.gtnewhorizons.angelicacompat.core.AngelicaCompatCore;
